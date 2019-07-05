@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="min-height: 100vh">
+  <mat-card style="width: 40%">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <form class="login-form" [formGroup]="loginFormGroup">
+        <div fxLayout="column">
+          <mat-form-field class="input-full-width">
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="!loginFormGroup.controls['email'].valid && loginFormGroup.controls['email'].touched">
+              {{ getError('email') }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field style="margin-top: 10px">
+            <input matInput placeholder="Password" name="password" type="password" formControlName="password"/>
+            <mat-error *ngIf="!loginFormGroup.controls['password'].valid && loginFormGroup.controls['password'].touched">
+              {{ getError('password') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-progress-bar [style.display]="loggingIn?'block' : 'none'" mode="indeterminate"></mat-progress-bar>
+      </form>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+      <button [style.display]="!loggingIn?'block' : 'none'" mat-raised-button (click)="login()" color="primary">Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

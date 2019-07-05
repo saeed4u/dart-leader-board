@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+
+    <span class="toolbar-title">Dartify</span>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" *ngIf="loggedIn">
+
+      <ul fxLayout fxLayoutGap="20px">
+        <li>
+          <button mat-icon-button
+                  matTooltip="Bookings">
+            <mat-icon>schedule</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button matTooltip="Settings" [matMenuTriggerFor]="auth">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #auth="matMenu">
+            <button mat-menu-item (click)="logOut()">
+              <span>Sign out</span>
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
