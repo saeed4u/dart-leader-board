@@ -24,7 +24,7 @@
       </form>
     </mat-card-content>
     <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
-      <button [style.display]="!loggingIn?'block' : 'none'" mat-raised-button (click)="login()" color="primary">Login
+      <button [style.display]="!loggingIn?'block' : 'none'" [disabled]="!valid" mat-raised-button (click)="login()" color="primary">Login
       </button>
     </mat-card-actions>
   </mat-card>

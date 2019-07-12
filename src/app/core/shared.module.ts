@@ -67,7 +67,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSelectModule,
     MatDatepickerModule,
     MatFormFieldModule
-  ]
+  ],
 })
 export class SharedModule {
 
